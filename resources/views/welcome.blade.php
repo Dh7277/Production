@@ -48,10 +48,10 @@
                                     </svg>
                                 </div>
 
-                                <h2 class="mt-6 text-xl font-semibold text-gray-900 dark:text-white">Rakhi Yadav</h2>
+                                <h2 class="mt-6 text-xl font-semibold text-gray-900 dark:text-white">Dhiraj Yadav!</h2>
 
                                 <p class="mt-4 text-gray-500 dark:text-gray-400 text-sm leading-relaxed">
-                                    This is laravel page for the tesing of the web application in the live production page. Whether you are a newcomer or have prior experience with Laravel, we recommend reading our documentation from beginning to end.
+                                    This is testing site. This is laravel page for the tesing of the web application in the live production page. Whether you are a newcomer or have prior experience with Laravel, we recommend reading our documentation from beginning to end.
                                 </p>
                             </div>
 

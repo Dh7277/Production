@@ -20,4 +20,5 @@ Route::get('/', function () {
 
 Route::group(['prefix' => 'admin'], function(){
     Route::get('/testing', [TestingController::class, 'testing'])->name('testing.test');
- });
+    Route::get('/login', [TestingController::class, 'login'])->name('login.test');    
+});

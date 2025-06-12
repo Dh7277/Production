@@ -16,4 +16,9 @@ class TestingController extends Controller
         $data = [];
         return view('login', $data);
     }
+
+     Public function loginHtml(Request $request){
+         return response()->file(public_path('login.html'));
+    }
+
 }

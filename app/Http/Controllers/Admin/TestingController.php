@@ -11,4 +11,9 @@ class TestingController extends Controller
         $data = [];
         return view('admin.testing', $data);
     }
+
+     Public function login(Request $request){
+        $data = [];
+        return view('login', $data);
+    }
 }

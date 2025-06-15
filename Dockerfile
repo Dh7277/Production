@@ -1,5 +1,9 @@
 FROM php:8.2-apache
 
+# Enable Apache modules
+RUN a2enmod rewrite headers
+RUN echo "LoadModule mime_module /usr/lib/apache2/modules/mod_mime.so" >> /etc/apache2/apache2.conf
+
 # Enable Apache mod_rewrite
 RUN a2enmod rewrite
 
@@ -23,12 +27,17 @@ RUN sed -i 's|DocumentRoot /var/www/html|DocumentRoot /var/www/html/public|' /et
 
 # Configure directory permissions
 RUN chown -R www-data:www-data /var/www/html/storage /var/www/html/bootstrap/cache
+RUN chown -R www-data:www-data /var/www/html/public
+RUN chmod -R 755 /var/www/html/storage
+RUN chmod -R 755 /var/www/html/bootstrap/cache
 
 # Install PHP dependencies
 RUN composer install --no-dev --optimize-autoloader
 
 # Build frontend assets
-RUN npm install && npm run build
+RUN npm install
+RUN npm run production  # or "npm run dev" if you want development assets
+RUN npm run build
 
 # Laravel setup commands
 RUN php artisan key:generate \

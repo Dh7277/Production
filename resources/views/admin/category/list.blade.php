@@ -62,7 +62,7 @@
                     <tbody>
 
                         {{-- @if ($categories->isNotEmpty()) --}}
-                        @if (isset($categories))
+                        @if ($categories)
                             @foreach ($categories as $category )
                             <tr>
                                 <td>{{ $category->id }}</td>

@@ -61,7 +61,8 @@
                     </thead>
                     <tbody>
 
-                        @if ($categories->isNotEmpty())
+                        {{-- @if ($categories->isNotEmpty()) --}}
+                        @if (isset($categories))
                             @foreach ($categories as $category )
                             <tr>
                                 <td>{{ $category->id }}</td>
@@ -110,7 +111,7 @@
             </div>
             {{-- </form> --}}
             <div class="card-footer clearfix">
-                {{ $categories->links() }}
+                {{-- {{ $categories->links() }} --}}
             </div>
         </div>
     </div>

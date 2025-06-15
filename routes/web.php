@@ -38,15 +38,15 @@ Route::group(['prefix' => 'admin'], function(){
     Route::group(['middleware' => 'admin.guest'],function(){
 
         Route::get('/login', [AdminLoginController::class, 'index'])->name('admin.login'); //Done
-        Route::post('/authenticate', [AdminLoginController::class, 'authenticate'])->name('admin.authenticate');//done
+        Route::post('/authenticate', [AdminLoginController::class, 'authenticate'])->name('admin.authenticate');
 
     });  
 
     // Route::group(['middleware' => 'admin.auth'],function(){
-        Route::get('/dashboard', [HomeController::class, 'index'])->name('admin.dashboard');
+        Route::get('/dashboard', [HomeController::class, 'index'])->name('admin.dashboard');//Done
         Route::get('/logout', [HomeController::class, 'logout'])->name('admin.logout');
 
-        Route::get('/form', [FormController::class, 'index'])->name('admin.form');
+        Route::get('/form', [FormController::class, 'index'])->name('admin.form');//Done
 
         //Categories routes
         Route::get('/categories', [CategoryController::class, 'index'])->name('categories.index');

@@ -25,3 +25,5 @@ services:
         value: production_db_asio_user
       - key: DB_PASSWORD
         value: XAatsS4CCGJPMtBYdEPzZ3Gp1nm09Ptx
+      - key: FORCE_HTTPS
+        value: "true"

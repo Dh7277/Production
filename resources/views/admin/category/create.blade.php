@@ -31,7 +31,7 @@
 
     <!-- Default box -->
     <div class="container-fluid">
-        <form action="{{ route('categories.store') }}" method="post" id="category-form" name="category-form" enctype="multipart/form-data">
+        <form action="{{ route('categories.store') }}" method="post" id="category-form" name="category-form" enctype="multipart/form-data" secure>
             @csrf
             <div class="card">
                 <div class="card-body">								

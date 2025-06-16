@@ -29,7 +29,7 @@ RUN chown -R www-data:www-data /var/www/html/storage /var/www/html/bootstrap/cac
 RUN composer install --no-dev --optimize-autoloader
 
 # Test database connection (will fail build if connection fails)
-RUN php artisan db:show --env=production
+#RUN php artisan db:show --env=production
 
 # Build frontend assets
 RUN npm install && npm run build

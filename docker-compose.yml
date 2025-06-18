@@ -13,11 +13,11 @@ services:
       - .:/var/www
     environment:
       - DB_CONNECTION=pgsql
-      - DB_HOST=${DB_HOST}  # From Render's PostgreSQL
-      - DB_PORT=${DB_PORT}  # 5432
-      - DB_DATABASE=${DB_DATABASE}
-      - DB_USERNAME=${DB_USERNAME}
-      - DB_PASSWORD=${DB_PASSWORD}
+      - DB_HOST=dpg-d179110dl3ps73a66qpg-a
+      - DB_PORT=5432
+      - DB_DATABASE=production_db_asio
+      - DB_USERNAME==production_db_asio_user
+      - DB_PASSWORD=XAatsS4CCGJPMtBYdEPzZ3Gp1nm09Ptx
     networks:
       - laravel
 

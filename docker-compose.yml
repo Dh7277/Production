@@ -3,7 +3,6 @@ version: '3.8'
 services:
   app:
     build:
-      env_file: .env
       context: .
       dockerfile: Dockerfile
     image: laravel-app
@@ -12,24 +11,13 @@ services:
       - "8000:8000"
     volumes:
       - .:/var/www
-    depends_on:
-      - db
-    networks:
-      - laravel
-
-  db:
-    image: mysql:8.0
-    container_name: mysql-db
-    restart: always
-    ports:
-      - "3306:3306"
     environment:
-      MYSQL_ROOT_PASSWORD: root
-      MYSQL_DATABASE: laravel
-      MYSQL_USER: laravel
-      MYSQL_PASSWORD: secret
-    volumes:
-      - dbdata:/var/lib/mysql
+      - DB_CONNECTION=pgsql
+      - DB_HOST=${DB_HOST}  # From Render's PostgreSQL
+      - DB_PORT=${DB_PORT}  # 5432
+      - DB_DATABASE=${DB_DATABASE}
+      - DB_USERNAME=${DB_USERNAME}
+      - DB_PASSWORD=${DB_PASSWORD}
     networks:
       - laravel
 
@@ -45,9 +33,6 @@ services:
       - app
     networks:
       - laravel
-
-volumes:
-  dbdata:
 
 networks:
   laravel:

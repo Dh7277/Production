@@ -10,11 +10,11 @@ services:
       - key: APP_ENV
         value: production
       - key: APP_DEBUG
-        value: true
+        value: false
       - key: APP_KEY
         value: base64:sPuk5Hx+DC+3PDh0MXtqjciGif+yFbRU+2AbWlKLgGk=
       - key: DB_CONNECTION
-        value: mysql
+        value: pgsql
       - key: DB_HOST
         value: dpg-d179110dl3ps73a66qpg-a
       - key: DB_PORT
@@ -27,3 +27,5 @@ services:
         value: XAatsS4CCGJPMtBYdEPzZ3Gp1nm09Ptx
       - key: FORCE_HTTPS
         value: "true"
+      - key: DATABASE_URL
+        value: postgresql://production_db_asio_user:XAatsS4CCGJPMtBYdEPzZ3Gp1nm09Ptx@dpg-d179110dl3ps73a66qpg-a/production_db_asio

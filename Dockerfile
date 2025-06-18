@@ -31,9 +31,8 @@ RUN composer install --no-dev --optimize-autoloader
 # Build frontend assets
 RUN npm install && npm run build
 
-# Environment configuration
-ARG BUILD_ENV=production
-COPY .env.${BUILD_ENV} .env
+# Just copy .env.example as reference
+COPY .env.example .env.example
 
 # Laravel setup commands
 RUN php artisan config:clear \
@@ -42,7 +41,7 @@ RUN php artisan config:clear \
     && php artisan view:cache
 
 
-
+    
 # Expose port 80
 EXPOSE 80
 

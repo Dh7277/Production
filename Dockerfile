@@ -31,9 +31,11 @@ RUN composer install --no-dev --optimize-autoloader
 # Build frontend assets
 RUN npm install && npm run build
 
+# Copy .env (if it exists)
+COPY .env ./
+
 # Laravel setup commands
-RUN php artisan key:generate \
-    && php artisan config:clear \
+RUN php artisan config:clear \
     && php artisan config:cache \
     && php artisan route:cache \
     && php artisan view:cache
